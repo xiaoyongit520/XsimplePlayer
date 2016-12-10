@@ -3,7 +3,7 @@
 ### 自己封装的一个播放器lib
 #### 1.添加中央库
 gradle
-```
+```java
 	allprojects {
 		repositories {
 			...
@@ -12,9 +12,9 @@ gradle
 	}
 ```
 #### 2.添加引用
-```
+```java
 	dependencies {
-	        compile 'com.github.xiaoyongit520:XsimplePlayer:v{version}'
+	        compile 'com.github.xiaoyongit520:XsimplePlayer:{version}'
 	}
 ```
 
