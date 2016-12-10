@@ -1,6 +1,6 @@
 # XsimplePlayer
 [![](https://jitpack.io/v/xiaoyongit520/XsimplePlayer.svg)](https://jitpack.io/#xiaoyongit520/XsimplePlayer)
-### 自己封装的一个播放器lib
+### 自己封装的一个基于Vitamio播放器lib
 #### 1.添加中央库
 gradle
 ```java
