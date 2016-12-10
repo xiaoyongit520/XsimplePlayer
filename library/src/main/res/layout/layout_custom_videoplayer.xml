@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/content"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:background="@android:color/black"
+    >
+    <!--视频内容居中控件-->
+    <io.vov.vitamio.widget.CenterLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <!--视频播放控件-->
+        <io.vov.vitamio.widget.VideoView
+            android:id="@+id/buffer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+    </io.vov.vitamio.widget.CenterLayout>
+
+    <!--加载框-->
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/control_shape"
+        android:orientation="horizontal">
+        <!--进度框-->
+        <ProgressBar
+            android:id="@+id/load_prog"
+            style="?android:attr/progressBarStyleLarge"
+            android:indeterminateDrawable="@drawable/jc_loading"
+            android:layout_width="30dp"
+            android:layout_height="40dp" />
+
+        <!--下载速度指示-->
+        <TextView
+            android:id="@+id/load_download_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            tools:text="120kb/s" />
+
+        <!--百分比进度-->
+        <TextView
+            android:id="@+id/load_rate"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="#FFFFFF"
+            android:layout_marginRight="5dp"
+            android:textSize="12sp"
+            tools:text="38%" />
+    </LinearLayout>
+</RelativeLayout>

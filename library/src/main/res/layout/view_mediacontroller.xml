@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:id="@+id/content"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:background="@drawable/video_player_bg_color"
+              android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--顶部-->
+        <include layout="@layout/top_bar"/>
+
+        <!--快进or快退-->
+        <TextView
+            android:id="@+id/tv_fast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/control_shape"
+            android:layout_centerHorizontal="true"
+            android:text="00:00/00:00"
+            android:textSize="12sp"
+            android:textColor="@android:color/white"
+            android:padding="10dp"
+            tools:visibility="visible"
+            android:visibility="gone"
+            android:layout_above="@+id/bootom_bar"
+            android:layout_marginBottom="20dp"
+            />
+
+        <!--音量 or 亮度-->
+        <RelativeLayout
+            android:id="@+id/operation_volume_brightness"
+            android:layout_width="100dp"
+            android:layout_height="75dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/control_shape"
+            android:orientation="horizontal"
+            android:padding="0dip"
+            android:visibility="gone"
+            tools:visibility="visible"
+            >
+            <ImageView
+                android:id="@+id/operation_bg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                tools:src="@drawable/video_volumn_bg"
+                />
+            <TextView
+                android:id="@+id/operation_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/operation_bg"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom ="true"
+                android:textColor="#ffffff"
+                android:textSize="10sp"
+                android:visibility="gone"
+                tools:visibility="visible"
+                tools:text="30%"
+                android:layout_marginBottom="5dp"
+                />
+        </RelativeLayout>
+
+        <!--底部-->
+        <include layout="@layout/bottom_bar"/>
+    </RelativeLayout>
+</LinearLayout>

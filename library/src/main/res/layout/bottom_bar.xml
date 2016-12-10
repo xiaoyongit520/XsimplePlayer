@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--底部控制条-->
+<RelativeLayout
+    android:id="@+id/bootom_bar"
+    android:layout_width="match_parent"
+    android:layout_alignParentBottom="true"
+    android:background="@color/control_bar_bg"
+    android:layout_height="56dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--播放、暂停-->
+    <ImageButton
+        android:id="@+id/mediacontroller_play_pause"
+        android:background="@null"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/paly_selector"
+        />
+    <!--正在播放时间-->
+    <RelativeLayout
+        android:id="@+id/txt_time"
+        android:layout_toRightOf="@+id/mediacontroller_play_pause"
+        android:layout_toLeftOf="@+id/mediacontroller_full"
+        android:layout_marginTop="3dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="15dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/mediacontroller_time_current"
+            style="@style/MediaController_Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00:00"
+            />
+
+        <!--总时长-->
+        <TextView
+            android:id="@+id/mediacontroller_time_total"
+            style="@style/MediaController_Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="00:00:00"/>
+    </RelativeLayout>
+
+    <SeekBar
+        android:id="@+id/mediacontroller_seekbar"
+        style="@style/MediaController_SeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/mediacontroller_play_pause"
+        android:layout_toLeftOf="@+id/mediacontroller_full"
+        android:layout_below="@+id/txt_time"
+        android:focusable="true"
+        android:max="1000"/>
+    <ImageButton
+        android:id="@+id/mediacontroller_full"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:background="@null"
+        android:src="@drawable/full"
+        android:layout_alignParentRight="true"/>
+</RelativeLayout>
