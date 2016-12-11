@@ -20,4 +20,4 @@ gradle
 
 
 #### 3.使用方式见demo  
-【注意】manifests里面Actvity的声明方式。
+【注意】manifests里面Actvity的声明方式,视频播放器的根布局一定要设置为 android:fitsSystemWindows="true" 否则视频控制界面会出现错位。
