@@ -38,9 +38,9 @@ public class CustomMediaController extends MediaController {
     private int mScreenWidth = 0;
 
     /**
-     * 是否为全屏
+     * 是否可以触摸控制
      */
-    private static boolean mIsFullScreen = false;
+    private static boolean mTouchController = false;
 
     /**
      * 手势识别器
@@ -204,13 +204,19 @@ public class CustomMediaController extends MediaController {
     }
 
     /**
-     * 设置全屏flag
+     * 设置是否可触摸控制
      * @param b
      */
-    public void setFullScreen(boolean b){
-        mIsFullScreen = b;
+    public void setTouchController(boolean b){
+        mTouchController = b;
     }
 
+    /**
+     * 设置是否可触摸flag
+     */
+    public boolean getTouchController(){
+        return mTouchController;
+    }
 
     /**
      * 获取屏幕宽度
@@ -389,7 +395,7 @@ public class CustomMediaController extends MediaController {
      * 是否全屏
      */
     public boolean isFullScreen() {
-        return mIsFullScreen;
+        return mTouchController;
     }
 
     /**

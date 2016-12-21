@@ -60,12 +60,6 @@ public class CustomVideoPlayer extends LinearLayout implements MediaPlayer.OnInf
     private int mWidth = -1;
 
 
-    /**
-     * 是否为全屏
-     */
-    private static boolean mIsFullScreen = false;
-
-
     public CustomVideoPlayer(Context context) {
         this(context, null);
     }
@@ -174,8 +168,6 @@ public class CustomVideoPlayer extends LinearLayout implements MediaPlayer.OnInf
         mVideoView.setVideoLayout(layout, 0);
     }
 
-
-
     /**
      * 设置URL地址并且播放
      *
@@ -188,31 +180,18 @@ public class CustomVideoPlayer extends LinearLayout implements MediaPlayer.OnInf
     }
 
     /**
-     * 是否全屏
+     * 设置是否可触摸控制
      *
-     * @return
      */
-    public boolean isFullScreen() {
-        return mIsFullScreen;
+    public void setIsTouchController(boolean isTouch) {
+        mCustomMediaController.setTouchController(isTouch);
     }
 
     /**
-     * 设置全屏状态
+     * 是否可以触摸控制
      */
-    private void setFullScreenState(boolean b) {
-        mIsFullScreen = b;
-        mCustomMediaController.setFullScreen(b);
-    }
-
-    /**
-     * 如果是半屏调用后则为全屏 如果为全屏调用后则为半屏
-     */
-    public void setFullOrNoFull() {
-        if (this.isFullScreen()) {
-            this.setNoFullScreen();
-        } else {
-            this.setFullScreen();
-        }
+    public boolean getIsTouchController() {
+       return mCustomMediaController.getTouchController();
     }
 
 
@@ -255,9 +234,7 @@ public class CustomVideoPlayer extends LinearLayout implements MediaPlayer.OnInf
     /**
      * 恢复半屏
      */
-    private void setNoFullScreen() {
-        this.setFullScreenState(false);
-
+    public void setNoFullScreen() {
         Activity activity = (Activity) getContext();
         Window window = activity.getWindow();
 
@@ -286,8 +263,7 @@ public class CustomVideoPlayer extends LinearLayout implements MediaPlayer.OnInf
     /**
      * 设置为全屏
      */
-    private void setFullScreen() {
-        this.setFullScreenState(true);
+    public void setFullScreen() {
         Activity activity = (Activity) getContext();
         Window window = activity.getWindow();
 
@@ -401,20 +377,12 @@ public class CustomVideoPlayer extends LinearLayout implements MediaPlayer.OnInf
         if (v.getId() == mCustomMediaController.mbutton_id_Back) {
             if (mOnBackBtnListener != null) {
                 mOnBackBtnListener.onClick(v);
-            } else {
-                if (this.isFullScreen()) {
-                    this.setNoFullScreen();
-                } else {
-                    ((Activity) getContext()).finish();
-                }
             }
 
 
         } else if (v.getId() == mCustomMediaController.mbutton_id_FullScreen) {
             if (mOnFullBtnListener != null) {
                 mOnFullBtnListener.onClick(v);
-            } else {
-                this.setFullOrNoFull();
             }
 
         }
