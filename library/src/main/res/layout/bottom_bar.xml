@@ -44,10 +44,9 @@
             android:layout_alignParentRight="true"
             android:text="00:00:00"/>
     </RelativeLayout>
-
+<!--        style="@style/MediaController_SeekBar"-->
     <SeekBar
         android:id="@+id/mediacontroller_seekbar"
-        style="@style/MediaController_SeekBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/mediacontroller_play_pause"
